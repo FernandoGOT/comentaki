@@ -21,9 +21,9 @@ const SignInUser = () => {
     <>
       <h3>Entrar na sua conta:</h3>
       { auth.signInUser.signInUserState.error !== '' && <p>{auth.signInUser.signInUserState.error}</p>}
-      <input type='text' placeholder='Seu e-mail' value={form.email} onChange={onChange('email')} />
-      <input type='password' placeholder='Sua senha' value={form.passwd} onChange={onChange('passwd')} />
-      <button onClick={() => {
+      <input type='text' data-cy='login-email-input' placeholder='Seu e-mail' value={form.email} onChange={onChange('email')} />
+      <input type='password' data-cy='login-password-input' placeholder='Sua senha' value={form.passwd} onChange={onChange('passwd')} />
+      <button data-cy='login-button' onClick={() => {
         auth.signInUser.signInUser(form.email, form.passwd)
       }}>Entrar</button>
     </>
